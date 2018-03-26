@@ -10,7 +10,7 @@ handlers:
   secure: always
   login: required
 
-librairies:
+libraries:
 - name: ssl
   version: latest
 - name: pycrypto
