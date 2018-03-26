@@ -1,17 +1,34 @@
 service: default
 runtime: python27
 api_version: 1
-threadsafe: yes
-
-env_variables:
-  env: 'dev'
+threadsafe: true
+default_expiration: "10m" 
 
 handlers:
 - url: /.*
   script: server.main.server
   secure: always
+  login: required
+
+librairies:
+- name: ssl
+  version: latest
+- name: pycrypto
+  version: latest
 
 skip_files:
+- ^(.*/)?#.*#$
+- ^(.*/)?.*~$
+- ^(.*/)?\..*$
+- ^node_modules$
+- ^env$
+- ^\.idea$
+- ^\.git$
+- ^scripts$
+- ^launch\.sh$
+- ^secret\.pem$
+- ^tasks$
+- ^tools$
 - ^(.*/)?.*\.py[co]$
 - .idea/
 - .git/
