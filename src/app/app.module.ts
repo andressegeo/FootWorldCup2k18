@@ -12,27 +12,18 @@ import { UserComponent } from './components/user/user.component';
 import { BetsComponent } from './components/bets/bets.component';
 import { TournamentComponent } from './components/tournament/tournament.component';
 import { HomeComponent } from './components/home/home.component';
-import { HeaderComponent } from './components/templates/header/header.component';
-import { FooterComponent } from './components/templates/footer/footer.component'
 
 const routes : Routes = [
-  {path: 'home', component: AppComponent},
-  {path: 'user', component: AppComponent},
-  {path: 'bets', component: AppComponent},
-  {path: 'bets', component: AppComponent},
-  {path: 'tournament', component: AppComponent},
+  {path: 'home', component: HomeComponent},
+  {path: 'user', component: UserComponent},
+  {path: 'bets', component: BetsComponent},
+  {path: 'tournament', component: TournamentComponent},
   {path: '', redirectTo:'/home', pathMatch: 'full'}
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent,
-    BetsComponent,
-    TournamentComponent,
-    HomeComponent,
-    HeaderComponent,
-    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,9 +31,8 @@ const routes : Routes = [
     RouterModule.forRoot(routes),
     HttpModule,
     HttpClientModule,
-    DataFormService
   ],
-  providers: [],
+  providers: [DataFormService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
