@@ -7,8 +7,6 @@ default_expiration: "10m"
 handlers:
 - url: /.*
   script: server.main.server
-  secure: always
-  login: required
 
 libraries:
 - name: ssl
